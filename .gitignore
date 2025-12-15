@@ -1,0 +1,90 @@
+# Go
+/bin/
+/pkg/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+coverage.out
+vendor/
+
+# Binaries
+main
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Frontend/build
+/dist/
+/build/
+/.vite/
+/.parcel-cache/
+
+# Env
+.env
+.env.local
+*.env
+
+# Docker
+docker-compose.override.yml
+
+# IDEs and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+*.log
+
+# Tests / Coverage
+coverage/
+coverage.*
+
+# Misc
+*.tmp
+*.bak
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go
+*.test
+*.out
+go.work
+go.work.sum
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Docker
+.dockerignore
+
