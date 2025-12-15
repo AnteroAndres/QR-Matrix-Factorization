@@ -266,6 +266,13 @@ npm run test:coverage
 - `NODE_API_URL`: URL de la API Node.js (default: http://node-api:3000)
 - `PORT`: Puerto del servidor (default: 8080)
 
+### Credenciales para login (opcional)
+
+- `ADMIN_USER`: Nombre de usuario administrador. Si está vacío, el sistema aceptará cualquier credencial no vacía (modo demo).
+- `ADMIN_PASS`: Contraseña de administrador. Si está vacío, el sistema aceptará cualquier credencial no vacía (modo demo).
+
+Para habilitar la verificación estricta de credenciales, establece `ADMIN_USER` y `ADMIN_PASS` en el archivo `.env`.
+
 ### API Node.js (.env)
 - `JWT_SECRET`: Secreto para verificar tokens JWT
 - `PORT`: Puerto del servidor (default: 3000)

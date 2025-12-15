@@ -97,7 +97,15 @@ func (h *MatrixHandler) Login(c *fiber.Ctx) error {
 			"error": "Username and password are required",
 		})
 	}
-
+	// If ADMIN_USER and ADMIN_PASS are configured, enforce credential check.
+	// Otherwise, allow any non-empty credentials for demo purposes.
+	if h.config.AdminUser != "" || h.config.AdminPass != "" {
+		if req.Username != h.config.AdminUser || req.Password != h.config.AdminPass {
+			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{
+				"error": "Invalid username or password",
+			})
+		}
+	}
 	claims := jwt.MapClaims{
 		"username": req.Username,
 		"exp":      time.Now().Add(time.Hour * 24).Unix(),

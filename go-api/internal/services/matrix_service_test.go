@@ -44,14 +44,14 @@ func TestValidateMatrix(t *testing.T) {
 		},
 		{
 			name:    "more columns than rows (invalid)",
-			matrix:  models.Matrix{{1, 2, 3}, {4, 5, 6}},
-			wantErr: false,
-		},
-		{
-			name:    "more columns than rows (invalid)",
 			matrix:  models.Matrix{{1, 2, 3}, {4, 5, 6}}, // 2x3, should fail
 			wantErr: true,
 		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			err := service.ValidateMatrix(tt.matrix)
 			if tt.wantErr {
 				assert.Error(t, err)
 			} else {

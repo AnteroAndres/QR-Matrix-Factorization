@@ -10,6 +10,8 @@ cp .env.example .env
 # Editar .env y configurar JWT_SECRET (opcional, tiene valor por defecto)
 ```
 
+> Para habilitar credenciales de login, edita `go-api/.env` y establece `ADMIN_USER` y `ADMIN_PASS`.
+
 2. **Ejecutar todo el sistema:**
 ```bash
 docker-compose up --build

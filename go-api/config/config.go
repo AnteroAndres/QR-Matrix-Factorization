@@ -12,6 +12,8 @@ type Config struct {
 	JWTSecret  string
 	NodeAPIURL string
 	Port       string
+	AdminUser  string
+	AdminPass  string
 }
 
 func LoadConfig() *Config {
@@ -32,10 +34,15 @@ func LoadConfig() *Config {
 		nodeAPIURL = "http://node-api:3000"
 	}
 
+	adminUser := os.Getenv("ADMIN_USER")
+	adminPass := os.Getenv("ADMIN_PASS")
+
 	return &Config{
 		JWTSecret:  jwtSecret,
 		NodeAPIURL: nodeAPIURL,
 		Port:       port,
+		AdminUser:  adminUser,
+		AdminPass:  adminPass,
 	}
 }
 
